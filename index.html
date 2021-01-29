@@ -12,7 +12,6 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <script src="js/all.min.js"></script>
-    <link rel="stylesheet" href="css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
@@ -42,28 +41,26 @@
             <h3>Book Ocean Time</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
+                <input class="inp-style" type="text" id="from" name="" placeholder="Dhaka, Bangladesh">
             </div>
             <div class="input-group">
                 <label for="">Flying To</label>
-                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+                <input class="inp-style" type="text" id="to" name="" placeholder="New York, United States">
             </div>
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">Departure</label>
-                    <input class="inp-style" type="date" name="">
+                    <input class="inp-style" type="date" id="departureDate" name="">
                 </div>
                 <div class="input-group">
                     <label for="">Return</label>
-                    <input class="inp-style" type="date" name="">
+                    <input class="inp-style" id="returnDate" type="date" name="">
                 </div>
             </div>
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input id="first-class-passengers"
-                    value="0"
-                    class="inp-style inp-width" type="number" name="">
+                    <input id="first-class-passengers" value="0" class="inp-style inp-width" type="number" name="">
                 </div>
                 <div class="plus-minus-btn mt-4">
                     <p>
@@ -72,16 +69,16 @@
                     </p>
                 </div>
             </div>
-            
+            <!-- economy class -->
             <div class="input-group f-class">
                 <div>
                     <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input id="economy-class-passengers" value="0" class="inp-style inp-width" type="number" name="">
                 </div>
                 <div class="plus-minus-btn mt-4">
                     <p>
-                        <button id="case-increase" class="btn btn-success"><i class="fas fa-plus"></i></button>
-                        <button id="case-decrease" class="btn btn-danger"><i class="fas fa-minus"></i></button>   
+                        <button id="economy-class-passenger-increase" class="btn btn-success"><i class="fas fa-plus"></i></button>
+                        <button id="economy-class-passenger-decrease" class="btn btn-danger"><i class="fas fa-minus"></i></button>   
                     </p>
                 </div>
             </div>
@@ -113,7 +110,26 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <!-- pop up details -->
+            <div class="popup" id="popup-1">
+                <div class="overlay"></div>
+                <div class="content">
+                  <div class="close-btn" onclick="togglePopup()">&times;</div>
+                  <h1 class="text-center">Booking Details</h1>
+                  <div class="ticket-info">
+                    <p id="fromInfo"></p>
+                    <p id="toInfo"></p>
+                    <p id="departureDateInfo"></p>
+                    <p id="returnDateInfo"></p>
+                    <p id="firstClassPassengerInputInfo"></p>
+                    <p id="economyClassPassengerInputInfo"></p>
+                    <p id="subTotalInfo"></p>
+                    <p id="vatInfo"></p>
+                    <p id="grandTotalInfo"></p>
+                  </div>
+                </div>
+            </div>
+            <button onclick="togglePopup()" class="btn-style">Book Now</button>
         </div>
     </main>
     <script src="js/script.js"></script>
