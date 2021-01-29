@@ -7,7 +7,7 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    background:url("images/ship.png");
+    background:url("../images/ship.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: scroll;
@@ -33,10 +33,12 @@ nav ul li a{
     padding: 10px;
     text-transform: uppercase;
     margin-left: 30px;
+    text-decoration: none;
 }
 nav ul li a:hover, a.active{
     background-color: #E33741;
     border-radius: 5px;
+    color: white;
 }
 .main-content{
     display: grid;
